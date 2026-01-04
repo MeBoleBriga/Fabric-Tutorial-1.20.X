@@ -12,6 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.vlatko.tutorialmod.Blocks.Custom.MagicBlock;
 import net.vlatko.tutorialmod.TutorialMod;
 
 public class ModBlocks {
@@ -42,6 +43,12 @@ public class ModBlocks {
                     .requiresTool()
                     .sounds(BlockSoundGroup.DEEPSLATE),
                     UniformIntProvider.create(3, 6)));
+
+
+    public static final Block MAGIC_BLOCK = registerBlock("magic_block",
+            new MagicBlock(AbstractBlock.Settings.create()
+                    .strength(1f)
+                    .requiresTool()));
 
 
     private static Block registerBlock(String name, Block block) {
