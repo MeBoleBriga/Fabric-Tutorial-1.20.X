@@ -7,6 +7,7 @@ import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import net.vlatko.tutorialmod.Blocks.ModBlocks;
@@ -49,6 +50,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(ModBlocks.MAGIC_BLOCK)
                 .criterion(hasItem(ModBlocks.MAGIC_BLOCK), conditionsFromItem(ModBlocks.MAGIC_BLOCK))
                 .offerTo(consumer, Identifier.of(TutorialMod.MOD_ID, "raw_pink_garnet_from_magic_block"));
+
+        createStairsRecipe(ModBlocks.PINK_GARNET_STAIRS, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_stairs"));
+
+        createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_GARNET_SLAB, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_slab"));
+
+        createDoorRecipe(ModBlocks.PINK_GARNET_DOOR, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_door"));
+
+        createTrapdoorRecipe(ModBlocks.PINK_GARNET_TRAPDOOR, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_trapdoor"));;
+
+        createPressurePlateRecipe(RecipeCategory.REDSTONE, ModBlocks.PINK_GARNET_DOOR, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_pressure_plate"));;
+
+        createFenceRecipe(ModBlocks.PINK_GARNET_FENCE, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_fence"));;
+
+        createFenceGateRecipe(ModBlocks.PINK_GARNET_FENCE_GATE, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_fence_gate"));;
+
+        createFenceRecipe(ModBlocks.PINK_GARNET_WALL, Ingredient.ofItems(ModBlocks.PINK_GARNET_BLOCK))
+                .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK)).offerTo(consumer,
+                        Identifier.of(TutorialMod.MOD_ID, "pink_garnet_wall"));;
+
 
     }
 
